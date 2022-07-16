@@ -5,9 +5,9 @@ int estado=0;
 float distan;
 PFont fuentenueva;
 String [] respuestas ={"S.XX", "500 a.C", "S.XIV", "2017", "2019", "1996", "1815", "2001", " No hay una \n única fecha", "1° Guerra \n Mundial", "Nacimiento de Jesús", "Revolución \n Francesa"};
-boolean pierde;
-boolean gana;
 PImage []imagenes = new PImage[5];
+
+
 void setup() {
   size (600, 600);
   estado=0;
@@ -39,14 +39,12 @@ for(int cuadrados=150;cuadrados<451;cuadrados+=100){
   rect(230,cuadrados,140,80);
 
 }
-
-    text("¿Cuándo empezó el renacimiento?", 300, 100 );
+    texto("¿Cuándo empezó el renacimiento?", 300, 100, 28 );
     pantallas(respuestas[0], width/2, 200, 30 );
     pantallas(respuestas[1], width/2, 300, 30 );
     pantallas(respuestas[2], width/2, 400, 30 );
     pantallas(respuestas[3], width/2, 500, 30 );
-    
-    
+     
   }
   // pregunta 2 
   else if ( estado==3 ) {
@@ -56,7 +54,7 @@ for(int cuadrados=150;cuadrados<451;cuadrados+=100){
     rect(260, 250, 80, 80);
     rect(260, 350, 80, 80);
     rect(260, 450, 80, 80); 
-    text("¿En qué año nuestra facultad \n recibió su actual nombre?", 300, 100 );
+    texto("¿En qué año nuestra facultad \n recibió su actual nombre?", 300, 100, 28);
     pantallas(respuestas[4], width/2, 200, 30 );
     pantallas(respuestas[5], width/2, 300, 30 );
     pantallas(respuestas[6], width/2, 400, 30 );
@@ -70,7 +68,7 @@ for(int cuadrados=150;cuadrados<451;cuadrados+=100){
     rect(120, 250, 350, 90);
     rect(120, 350, 350, 90);
     rect(120, 450, 350, 90);
-    text("¿Cuándo empieza el \n arte contemporáneo?", 300, 50 );
+    texto("¿Cuándo empieza el \n arte contemporáneo?", 300, 50, 28 );
     pantallas(respuestas[8], 275, 190, 30 );
     pantallas(respuestas[9], 275, 285, 30 );
     pantallas(respuestas[10], width/2, 400, 30 );
@@ -140,7 +138,12 @@ void mousePressed() {
     }
   }
   
- 
+  void texto( String texto, float x, float y, float tamanio) {
+
+  textAlign( CENTER );
+  textSize( tamanio );
+  text( texto, x, y );
+}  
   void reiniciar() {
     estado=0;
 
